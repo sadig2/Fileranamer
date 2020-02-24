@@ -6,7 +6,7 @@ import re
 
 for dirpath, dirname, filenames in os.walk("/home/clanzu2/Desktop/test"):
     for file in filenames:
-        if (re.match("\w+[.]css", file)):
+        if (re.match("^\w+[.]css$", file)):
             newFilarray = re.split("[.]", file)
             os.rename(os.path.join(dirpath, file), os.path.join(
                 dirpath, newFilarray[0] + ".module.css"))
